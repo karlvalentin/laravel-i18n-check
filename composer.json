@@ -1,0 +1,25 @@
+{
+  "name": "karlvalentin/laravel-i18n-check",
+  "description": "Artisan command for checking language resources.",
+  "type": "library",
+  "minimum-stability": "stable",
+  "license": "MITq",
+  "authors": [
+    {
+      "name": "Karl Valentin",
+      "email": "karl.valentin@kvis.de"
+    }
+  ],
+  "require": {
+  },
+  "autoload": {
+    "psr-4": {
+      "KarlValentin\\LaravelI18nCheck\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "KarlValentin\\LaravelI18nCheck\\": "src"
+    }
+  }
+}
