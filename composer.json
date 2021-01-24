@@ -3,7 +3,7 @@
   "description": "Artisan command for checking language resources.",
   "type": "library",
   "minimum-stability": "stable",
-  "license": "MITq",
+  "license": "MIT",
   "authors": [
     {
       "name": "Karl Valentin",
@@ -11,6 +11,9 @@
     }
   ],
   "require": {
+    "php": "^7.4.0|^8.0",
+    "laravel/framework": "^7.0|^8.0",
+    "laravel/helpers": "^1.2"
   },
   "autoload": {
     "psr-4": {
@@ -20,6 +23,16 @@
   "autoload-dev": {
     "psr-4": {
       "KarlValentin\\LaravelI18nCheck\\": "src"
+    }
+  },
+  "require-dev": {
+    "orchestra/testbench": "^6.0"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "KarlValentin\\LaravelI18nCheck\\I18nCheckServiceProvider"
+      ]
     }
   }
 }
