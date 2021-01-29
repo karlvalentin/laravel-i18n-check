@@ -17,7 +17,8 @@ class CheckLanguageResources extends Command
      *
      * @var string
      */
-    protected $signature = 'i18n:check';
+    protected $signature = 'i18n:check
+                            {--s|skip-directories= : directories that should not be parsed}';
 
     /**
      * The console command description.
@@ -35,7 +36,7 @@ class CheckLanguageResources extends Command
     {
         $checker = new LanguageResourcesChecker(
             resource_path('lang'),
-            config('i18ncheck.skipDirectories')
+            $this->getDirectoriesToSkip()
         );
 
         foreach ($checker->getLanguages() as $language) {
@@ -51,5 +52,18 @@ class CheckLanguageResources extends Command
         }
 
         return $checker->allLanguageResourcesAreComplete() ? 0 : 1;
+    }
+
+    /**
+     * Get directories that should not be parsed.
+     *
+     * @return array
+     */
+    private function getDirectoriesToSkip(): array
+    {
+        return array_merge(
+            config('i18ncheck.skipDirectories'),
+            explode(',', $this->option('skip-directories'))
+        );
     }
 }
