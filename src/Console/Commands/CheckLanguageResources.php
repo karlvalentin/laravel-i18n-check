@@ -35,7 +35,7 @@ class CheckLanguageResources extends Command
     public function handle()
     {
         $checker = new LanguageResourcesChecker(
-            resource_path('lang'),
+            lang_path(),
             $this->getDirectoriesToSkip()
         );
 
